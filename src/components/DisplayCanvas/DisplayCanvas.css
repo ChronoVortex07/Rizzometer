@@ -1,0 +1,9 @@
+.display-canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 640px;
+  height: 400%;
+  max-width: 100%;
+  background-color: #f0f0f0;
+}
