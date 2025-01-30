@@ -1,5 +1,17 @@
-.App {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+body {
+  background-color: #ffc8dd;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+.App {
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 20px;
+  margin-top: 40px;
+}
+

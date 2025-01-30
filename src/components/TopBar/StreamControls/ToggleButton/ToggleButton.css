@@ -1,0 +1,145 @@
+* {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none;
+}
+.row {
+  display: table-row;
+}
+
+.toggle-button-cover {
+  display: flex;
+  position: relative;
+  height: 60px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.button-cover {
+  height: 100px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px -8px #c5d6d6;
+  border-radius: 4px;
+}
+
+.button-cover:before {
+  counter-increment: button-counter;
+  content: counter(button-counter);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #d7e3e3;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 110px; /* 74px */
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.button.b2 {
+  border-radius: 2px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/* Button 9 */
+#button-9 .knobs:before,
+#button-9 .knobs:after,
+#button-9 .knobs span {
+  position: absolute;
+  top: 4px;
+  width: 50px;
+  height: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  border-radius: 25px;
+  transition: 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-9 .knobs:before {
+  content: "CAMERA";
+  left: 4px; /* 4px */
+}
+
+#button-9 .knobs:after {
+  content: "FILE";
+  right: -52px; /* -24px */
+}
+
+#button-9 .knobs:before,
+#button-9 .knobs:after {
+  color: #fff;
+  z-index: 2;
+}
+
+#button-9 .knobs span {
+  left: 4px;
+  background-color: rgba(63, 161, 251, 1);
+  z-index: 1;
+}
+
+#button-9 .checkbox:checked + .knobs:before {
+  left: -52px; /* -24px */
+}
+
+#button-9 .checkbox:checked + .knobs:after {
+  right: 4px;
+}
+
+#button-9 .checkbox:checked + .knobs span {
+  left: 48px; /* 42px */
+  background-color: rgba(252, 70, 168, 1);
+}
+
+#button-9 .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+}

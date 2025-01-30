@@ -3,13 +3,15 @@ import "./App.css";
 // import "./styles/fonts.css"; // Import custom fonts
 
 import AppProviders from "./providers/AppProviders";
-import VideoInput from "./components/DisplayPanel/VideoInput";
+import TopBar from "./components/TopBar/TopBar";
+import VideoInput from "./components/VideoInput/VideoInput";
 import VideoDisplay from "./components/DisplayCanvas/DisplayCanvas";
 
 function App() {
   return (
     <AppProviders>
       <div className="App">
+        <TopBar />
         <VideoInput />
         <VideoDisplay />
       </div>
