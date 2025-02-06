@@ -57,6 +57,14 @@ const VideoDisplay: React.FC = () => {
         const y1 = box.box.y1 * videoSize.height;
         const y2 = box.box.y2 * videoSize.height;
 
+        let description = "";
+
+        if (box.score / 5 < 0.6) {
+          description = "\nCrook";
+        } else {
+          description = "\nMafia boss";
+        }
+
         return (
           <div
             key={index}
@@ -77,15 +85,20 @@ const VideoDisplay: React.FC = () => {
                 position: "absolute",
                 top: 0,
                 left: "50%",
-                transform: "translateX(-50%)",
-                color: "white",
+                transform: "translate(-50%, -100%)",
+                color: 'white',
                 backgroundColor: "rgba(0, 0, 0, 0.7)",
+                width: "100%",
                 padding: "2px 5px",
                 borderRadius: "3px",
                 fontSize: "14px",
+                whiteSpace: "pre-line"
               }}
             >
-              {((box.score / 5) * 10).toFixed(2)}
+              {"LV. "+
+              ((box.score / 5) * 100).toFixed(0) +
+              description
+              }
             </span>
           </div>
         );
