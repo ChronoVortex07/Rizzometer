@@ -40,7 +40,6 @@ def handle_frame(data):
 
     # Run YOLO on the frame
     results = get_beauty_score(frame, face_model, rizz_model, as_fraction=True)
-    print(results)
 
     # Send back bounding boxes and labels
     socketio.emit('detection', results)

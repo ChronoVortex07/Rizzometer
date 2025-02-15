@@ -19,7 +19,7 @@ const VideoInput: React.FC = () => {
         // console.log("🖼 Sending frame...");
         socket.emit("frame", frame);
       }
-    }, 500); // Send frames every 100ms
+    }, 100); // Send frames every 100ms
   
     return () => clearInterval(sendFrames);
   }, [socket, captureFrame]);
